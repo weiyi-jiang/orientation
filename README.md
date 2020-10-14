@@ -9,29 +9,31 @@ repositories of the lab. They are contributed by different past and current memb
 but are all meant to follow good computational research practice that makes our work easy to share
 and reproduce.
 
-
-**Please do one or more of the following tasks (or based on instructions Gao gave you) **.
+**Please do one or more of the following tasks (or based on instructions Gao gave you)**.
+**Please make sure you use the best of your knowledge editing Markdown format files, that is, format things nicely and logically**.
 
 
 # Tasks
 
 ## Task 1: Bash
 
-In this task you are going to install basic softwares/packages needed for our analysis
+In this task you are going to install basic software and packages needed for the analysis
 
 If you do not have any experience working with command-line interface (on Linux or Mac). Please follow this notebook - [handbook](https://github.com/haoyueshuai/lab_tasks/blob/main/sos_meta_script.ipynb) to guild you through this task.     
 
-### git, github.com and markdown
+### Git
 
-You should receive an email notification asking you to join the github repository for this assignment. Please contact Gao if you don't have it.
+You should receive an email notification asking you to join the github repository for this assignment. Please contact Gao if you don't have it. All you need to know here is to clone the git repo and work with it using bash.
 
-Before you make any changes to the wiki, you should learn about using `git` if you haven't used it before. Under the `orientation` folder of this repo (that you should have been granted permission to at this point) there is a Markdown file called [`5m-git.md`](5m-git) for a 5-minutes tutorial on `git`. If you are not familiar with `git` please walk through that document to learn basic git. If you are already familiar with `git`, please take a look and help improve a more advance tutorial [`git-tips.md`](git-tips) completing some of the `FIXME` tags I made on the document, or adding to it whatever tips you've learned in the past that you find useful to mention here. **Please make sure you use the best of your knowledge editing Markdown format files, that is, format things nicely and logically**.
+You should learn about using `git` if you haven't used it before. If you are not familiar with `git` please walk through the [handbook](https://github.com/haoyueshuai/lab_tasks/blob/main/sos_meta_script.ipynb) to learn basic git. 
+
+### Software installation
+
+Here you need to install conda, SoS and docker for the following tasks. 
+If you still have problem, please walk through the [handbook](https://github.com/haoyueshuai/lab_tasks/blob/main/sos_meta_script.ipynb). 
 
 
-### Additional reading
-
-
-## Task 2:  IPython notebook and JupyterLab
+## Task 2:  IPython notebook 
 
 This task is about good computational biology research practice.
 Regardless of your focus (on methods development or applied data analysis) it is required that all computational
