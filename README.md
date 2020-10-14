@@ -27,8 +27,9 @@ If you still have problem, please walk through the [handbook](https://github.com
 
 ## Task 2:  IPython notebook 
 
-This task is about a simple computational biology research practice. This task should give you an example of how you could work with IPython notebook + JupyterLab.
-Regardless of your focus (on methods development or applied data analysis), it is required that all computational procedures in your daily research are well documented, organized and version controlled (using git) for review. In order to do so, you can communicate your results as well as the code that generated them in a self-contained document, i.e. the notebook. 
+Note: In order to finish this task, you need to finish task one first. 
+
+This task is about a simple computational biology research practice. This task should give you an example of how you could work with IPython notebook + JupyterLab. Regardless of your focus (on methods development or applied data analysis), it is required that all computational procedures in your daily research are well documented, organized and version controlled (using git) for review. In order to do so, you can communicate your results as well as the code that generated them in a self-contained document, i.e. the notebook. 
 
 Learn from [this LMM example](https://github.com/haoyueshuai/lab_tasks/blob/main/LMM.ipynb) the suggested format to write and report computational analysis. The suggested format is as follows:
 
@@ -47,12 +48,15 @@ If you use Debian based Linux desktop (Debian or Ubuntu) [here are some recommen
 
 ## Task 3:  Rstudio 
 
+Note: Task one is not prerequisite of this task.
+
 Rstudio is alternative to JupyterLab for interactive anlaysis.  (see Rmd below for more details). This task requires some R skills, also some minimal background of data science/machine learning/biostats.
 
 Please download this [R_assignment](https://github.com/haoyueshuai/lab_tasks/blob/main/assignment.Rmd) and [Data for this assignment](https://github.com/haoyueshuai/lab_tasks/blob/main/data/data_cleaned.csv) to finish this task and provide us your results, including the Rmd file and HTML report.
 
 **Please Google or ask us if you have any technical questions**. 
-**Please add any comments into your final result/report and email the final version to Gao**.
+
+**Please add any comments into your result/report and email the final version to Gao**.
 
 ## Additional reading
 - Learn from these examples interactive data analysis using SoS Notebook that allows for multiple languages inside one notebook (you can find and run them at: http://sosworkflows.com):
