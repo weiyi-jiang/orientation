@@ -1,0 +1,10 @@
+/bin/bash SCRIPT:
+    # remove redundant reference summary stats file
+    rm -f /Users/shuaihaoyue/Desktop/LMM_MWE/bol_output/cache/imputed_genotypes_chr22.phenotypes_BMI.boltlmm.ref_stats.gz
+    
+    
+/bin/bash SCRIPT:
+    # rename reference summary stats file
+    mv /Users/shuaihaoyue/Desktop/LMM_MWE/bol_output/cache/imputed_genotypes_chr21.phenotypes_BMI.boltlmm.ref_stats.gz /Users/shuaihaoyue/Desktop/LMM_MWE/bol_output/phenotypes_['BMI'].boltlmm.ref_stats.gz
+    
+    
