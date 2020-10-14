@@ -32,11 +32,11 @@ Regardless of your focus (on methods development or applied data analysis), it i
 
 Learn from [this LMM example](https://github.com/haoyueshuai/lab_tasks/blob/main/LMM.ipynb) the suggested format to write and report computational analysis. The suggested format is as follows:
 
-    1. **Title,** and in the same notebook cell **a brief one sentence summary** of what the notebook is about.
-    2. **Motivation** or **Aims**: describe the problem under investigation.
-    3. **Methods overview**: a high-level description of methods used to solve the problem.
-    4. **Main conclusions** (not applicable to a pure workflow notebook): take home message from your investigations.
-    5. **Data input and output** (if applicable): describe data used and generated from the notebook.
+    1. Title and in the same notebook cell **a brief one sentence summary** of what the notebook is about.
+    2. Motivation or Aims: describe the problem under investigation.
+    3. Methods overview: a high-level description of methods used to solve the problem.
+    4. Main conclusion: (not applicable to a pure workflow notebook): take home message from your investigations.
+    5. Data input and output (if applicable): describe data used and generated from the notebook.
     6. The rest of the notebook: multiple sections of detailed steps, with interactive codes / workflows and narratives, as well as diagnostic summary statistics, plots and tables at each step.
 
 Here in the Juyter notebook, we use [SoS suite](https://vatlab.github.io/sos-docs), as the workflow system (pipeline tool). SoS is super cool that it can work with multi-language for interactive analysis in one notebook! For example in [this LMM example](https://github.com/haoyueshuai/lab_tasks/blob/main/LMM.ipynb), we use Bash, R and Python all together.
