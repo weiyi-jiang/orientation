@@ -30,18 +30,7 @@ If you still have problem, please walk through the [handbook](https://github.com
 This task is about a simple computational biology research practice. This task should give you an example of how you could work with IPython notebook + JupyterLab.
 Regardless of your focus (on methods development or applied data analysis) it is required that all computational procedures in your daily research are well documented, organized and version controlled (using git) for review at any point. In order to do so, you can communicate your results as well as the code that generated them in a self-contained document, i.e. the notebook. 
 
-Here in the Juoyter notebook, we use [SoS suite](https://vatlab.github.io/sos-docs), as the workflow system (pipeline tool). SoS is multi-language notebook for interactive analysis. it is super cool that it can work with R, Python, Bash and other languages in one notebook! For example in this [LMM_notebook]()
-
-What you need to do is to run this 
-
-Here are some tasks you should walk through:
-
-1. [Install Jupyter Lab with SoS Suite](jupyter-setup), make sure you know (eg by learning from Google) how to launch Bash, R and Python notebooks and correspondingly write codes in them.
-    - If you use Debian based Linux desktop (Debian or Ubuntu) [here are some recommendations](../productivity_tips/#linux-distributions) on setting up your machine.
-2. Learn from these examples interactive data analysis using SoS Notebook that allows for multiple languages inside one notebook (you can find and run them at: http://sosworkflows.com):
-    - [Data exchange between languages](https://github.com/vatlab/sos/blob/master/development/docker-demo/examples/JupyterCon18/2_Data_Exchange.ipynb)
-    - [SoS Notebook built-in commands](https://github.com/vatlab/sos/blob/master/development/docker-demo/examples/JupyterCon18/3_SoS_Magics.ipynb)
-3. Learn from [this example](https://github.com/gaow/annotation-finemap-dsc) (and the [HTML version](https://gaow.github.io/annotation-finemap-dsc/)) the suggested format to write and report computational analysis. This is a demo of a research website `jnbinder` created. The suggested format is as follows:
+Learn from [this LMM example](https://github.com/haoyueshuai/lab_tasks/blob/main/LMM.ipynb) the suggested format to write and report computational analysis. The suggested format is as follows:
     1. **Title,** and in the same notebook cell **a brief one sentence summary** of what the notebook is about.
     2. **Motivation** or **Aims**: describe the problem under investigation.
     3. **Methods overview**: a high-level description of methods used to solve the problem.
@@ -49,8 +38,17 @@ Here are some tasks you should walk through:
     5. **Data input and output** (if applicable): describe data used and generated from the notebook.
     6. The rest of the notebook: multiple sections of detailed steps, with interactive codes / workflows and narratives, as well as diagnostic summary statistics, plots and tables at each step.
 
-In your future daily research you will be expected to use SoS Notebook to analyze data, document your workflows with suggested analysis report format, and make them available as websites to share with your colleagues.
-We host a private webserver and provide instructions to configure your github repository to automatically publish websites to the server as soon as you push to the repository.
+Here in the Juoyter notebook, we use [SoS suite](https://vatlab.github.io/sos-docs), as the workflow system (pipeline tool). SoS is super cool that it can work with multi-language for interactive analysis in one notebook! For example in [this LMM example](https://github.com/haoyueshuai/lab_tasks/blob/main/LMM.ipynb), we use Bash, R and Python all together.
+
+What you need to do for this task is to run the minimal working example (MWE) of this LMM notebook. And provide us your report of results.
+
+    - If you use Debian based Linux desktop (Debian or Ubuntu) [here are some recommendations](../productivity_tips/#linux-distributions) on setting up your machine.
+
+### Additional reading
+
+Learn from these examples interactive data analysis using SoS Notebook that allows for multiple languages inside one notebook (you can find and run them at: http://sosworkflows.com):
+    - [Data exchange between languages](https://github.com/vatlab/sos/blob/master/development/docker-demo/examples/JupyterCon18/2_Data_Exchange.ipynb)
+    - [SoS Notebook built-in commands](https://github.com/vatlab/sos/blob/master/development/docker-demo/examples/JupyterCon18/3_SoS_Magics.ipynb)
 
 ## Task 3:  Rstudio 
 
