@@ -58,7 +58,7 @@ Please download this [R_assignment](https://github.com/haoyueshuai/lab_tasks/blo
 
 **Please add any comments into your result/report and email the final version to Gao**.
 
-## Additional reading
+## Additional reading FYI
 - Learn from these examples interactive data analysis using SoS Notebook that allows for multiple languages inside one notebook (you can find and run them at: http://sosworkflows.com):
     - [Data exchange between languages](https://github.com/vatlab/sos/blob/master/development/docker-demo/examples/JupyterCon18/2_Data_Exchange.ipynb)
     - [SoS Notebook built-in commands](https://github.com/vatlab/sos/blob/master/development/docker-demo/examples/JupyterCon18/3_SoS_Magics.ipynb)
