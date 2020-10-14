@@ -10,7 +10,7 @@ but are all meant to follow good computational research practice that makes our 
 and reproduce.
 
 
-**Please do one or more of the following tasks (or based on instructions Gao gave you). **
+**Please do one or more of the following tasks (or based on instructions Gao gave you) **.
 
 
 # Tasks
@@ -19,7 +19,7 @@ and reproduce.
 
 In this task you are going to install basic softwares/packages needed for our analysis
 
-If you do not have any experience working with command-line interface (on Linux or Mac). Please follow this notebook - [handbook](https://github.com/haoyueshuai/compbio-recipes/Handbook.ipynb) to guild you through this task.     
+If you do not have any experience working with command-line interface (on Linux or Mac). Please follow this notebook - [handbook](https://github.com/haoyueshuai/lab_tasks/blob/main/sos_meta_script.ipynb) to guild you through this task.     
 
 ### git, github.com and markdown
 
@@ -64,7 +64,9 @@ We host a private webserver and provide instructions to configure your github re
 
 ## Task 3:  Rstudio 
 
-Rstudio and workflowr is alternative to JupyterLab for interactive anlaysis. Rstudio is not recommended though, if your work involves data analysis implemented as bioinformatics workflows (see Task 4 below for more details). 
+Rstudio is alternative to JupyterLab for interactive anlaysis.  (see Rmd below for more details). This task requires some R skills and also minimal background of data science/machine learning/biostats.
+
+Please download this [R_assignment](https://github.com/haoyueshuai/lab_tasks/blob/main/assignment.Rmd) and [Data for this assignment](https://github.com/haoyueshuai/lab_tasks/blob/main/data/data_cleaned.csv) to finish this task.
 
 (Contents to be updated ...)
 
