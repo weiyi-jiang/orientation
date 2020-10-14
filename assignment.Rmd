@@ -1,0 +1,284 @@
+---
+title: "Screening assignment -- Gao Lab"
+author: "Your name, Department and Which year are you in"
+date: "Oct. 8th, 2020"
+output:
+  html_document:
+    code_folding: show
+    highlight: haddock
+    theme: lumen
+    toc: yes
+    toc_depth: 4
+    toc_float: yes
+  word_document:
+    toc: yes
+    toc_depth: '4'
+  pdf_document:
+    toc: yes
+    toc_depth: 4
+---
+
+```{r setup, include=FALSE}
+#please do not touch this chunk
+knitr::opts_chunk$set(echo = TRUE, results = "hold",fig.width = 7, fig.height = 4)
+if(!require("pacman")) install.packages("pacman")
+pacman::p_load(dplyr, ggplot2, plyr, tidyverse, pander, ggpubr, rapportools, glmnet, knitr, pROC, reshape2)  
+```
+
+\newpage
+
+**Name your files using the scheme:** 
+
+`LastName_FirstName.rmd` etc. 
+
+**For example:** `Haoyue_Shuai.rmd`,`Haoyue_Shuai.html`
+
+Instruction: 
+
+Hi! Thank you for being interested in our lab! 
+
+This assignment could give you a glimpse of research in statistical genetics. Completing this assignment, you could tell if you feel comfortable learning/working in this field, and know our expectations as well. 
+
+This assignment needs to be done in R. Don't panic if you've just started learning R. It is completely open book/notes/internet. We are not looking for high level R skills, rather to see if you are able to make sense out of statistical genetics with instructions and to learn from examples. For most of the questions, all you need to do is to provide concise answers in your own words (1-3 sentences). For the coding parts, all the codes needed are provided in examples, all you need to do is find them out and modify. But you may need to come up with your own codes for the optional parts, which are designed for students with stronger programming background. Some of them are tricky so totally optional, we would appreciate it if you can try to answer, but it's totally fine if you skip them!
+
+Please do not change any code in the setup chunk above. Write your answers here in the .rmd file and knitr it into html format for our review (simply by clicking the knit icon right next to the finding icon). Please show your answers, codes and plots when needed. Throughout the assignment, you do not need to use any LaTeX or mathematical equations. Please make sure the compiled pdf shows your answers completely. 
+
+**Electronic Submission:** Please send your `.rmd` file and `.html` report to Gao (gw2411@cumc.columbia.edu).
+
+Data: 
+
+`sub_UKBB.csv`.
+
+**Help:** Use any tools you could find to help you out for all the questions. If you are stuck somewhere for technical issues, please Google or ask us for help. 
+
+
+HAVE FUN WITH STATISTICAL GENETICS!!!
+
+
+\newpage
+
+\newpage 
+
+## Part 1. Association study
+
+To identify genetic factors (variants) that may be involved in a particular trait, for example tinnitus condition, asthma condition, etc, we conduct genetic association studies. That is to take the whole population of people with this trait(cases), and compare their genetics to a group of individuals without this trait(controls). If one of the variants is observed more frequently than you would expect by chance, in the cases than controls. Then there is evidence that this variant might be involved in this trait.
+
+### 1) Phenotype Data 
+
+In order to do genetic association studies, we need phenotype data and genotype data from cases and controls.
+
+Phenotype data: ID, age, height, BMI, condition for that trait (tinnitus in this case), etc.
+Genotype data : you can consider it as data covering information needed from human chromosome 1 to chromosome 22.
+
+For the phenotype data. We use data from UKbiobank for our analysis. In this section you will get a chance to manipulate a small subset of the data, yes we also cover data science! 
+
+**Load the data**
+
+Load `sub_UKBB.csv`. Note, you only need to write codes when seeing `YOUR CODE`, otherwise please don't change any code of that chunk and run it directly.
+```{r}
+# you need to put the data-set in the same folder
+# where this .rmd file sits,
+# which is here:
+getwd()
+sub_UKBB<-read.csv("data_cleaned.csv")
+```
+
+**Exploratory data analysis (EDA) of the data**
+```{r}
+dim(sub_UKBB) # This data covering 144756 participants and 11 variables of them (IID, FID, etc)
+```
+
+```{r}
+colnames(sub_UKBB) # 11 variables 
+```
+
+```{r}
+summary(sub_UKBB) 
+```
+
+```{r}
+head(sub_UKBB) # show part of the data
+```
+**i)** How many females and males are there in this data?
+ * 77535 females, 67221 males
+ 
+**ii)** For the tinnitus trait, can you tell what kind of trait it is? 
+A.Binary trait. B. Continuous trait. C. Not sure
+ * A.
+
+**iii)** Recode f.4803
+
+Field 4803 (f.4803) is the answers from participants for ACE touchscreen question "Do you get or have you had noises (such as ringing or buzzing) in your head or in one or both ears that lasts for more than five minutes at a time?" 
+
+Defined-instances (you can consider them as visits) run from 0 to 3: f.4803.0.0, f.4803.1.0, f.4803.2.0, f.4803.3.0. 
+
+f.4803.0.0 meaning answers of the first visit.
+
+```{r recode}
+# Recode function:
+recode<-function(df,column_name){
+  new_names<-c()
+  for (i in column_name){
+    new_column_name<-paste0(i,"_recode")
+    new_names<-c(new_names,new_column_name)
+    df[,new_column_name] <- revalue(df[,i], c("No, never"= 0, 
+                                            "Yes, but not now, but have in the past"= 1, 
+                                            "Yes, now some of the time"= 1, 
+                                            "Yes, now a lot of the time"= 1,
+                                            "Yes, now most or all of the time"= 1,
+                                            "Prefer not to answer"= NA,
+                                            "Do not know"= NA ))
+  }
+  return (list(df=df,new_column_names=new_names))
+}
+
+# columns needs to be recoded:
+column_name<-c("f.4803.0.0","f.4803.1.0","f.4803.2.0","f.4803.3.0")
+
+# get a new data.frame with recoded columns added:
+df_recode<-recode(df=sub_UKBB,column_name)$df
+
+# get names of recoded columns:
+new_column_names<-recode(df=sub_UKBB,column_name)$new_column_names
+
+# show recode summary:
+for (i in new_column_names)
+{cat(i,"summary:");print(table(df_recode[,i]));cat("\n")}
+```
+Can you explain what is the main purpose of recoding?
+
+* Tinnius is a binary trait, however, we have more than 2 answers for this trait. The main purpose is to recode all answers including "Yes" into "1", regardless of the frequency. And "0" for answers of tinnitus = "No". To get the cases and controls for this trait.
+
+**iv)** Define cases and controls of tinnitus for each participants
+
+```{r}
+data_sub <- df_recode[,new_column_names]
+# Function to define cases
+f<-function(x){
+  visit<-c()
+  for (i in 1:4){
+    if (!is.na(x[i]))
+    {visit<-c(visit,x[i])}
+  }
+  if ("1" %in% visit){result= TRUE}
+  else{result=FALSE}
+  return (result)
+}
+# Apply the above function
+df_recode$cases<-apply(data_sub, 1, f)
+head(df_recode,10)
+```
+**v)** Get the subset of cases/controls of tinnitus from all participants, with some columns only
+
+```{r}
+df_cases  <- df_recode %>%
+  select(IID,FID,cases)%>% 
+  filter(cases==TRUE)
+head(df_cases,10)  
+```
+Please modify codes above and get all the controls with columns of FID,IID, cases,f.22001.0.0, f.21003.0.0, f.21003.1.0, f.21003.2.0, f.21003.3.0. And show the first 10 rows of them.
+```{r}
+# YOUR CODE
+```
+\newpage
+
+### 2) Extract age (Totally optional, you can choose how many questions in this section you'd love to answer, even none :P)
+
+**i)** Field 21003 contains the information of the age of participants, same as field 4803. Note that some of them have more than one age, can you explain why?
+
+* There are more than one visits for those participants, they provide their age each time they visits.
+
+**ii)** For those with more than one age, if we only want to get one age out of all of them, which one should be the one we want? 
+
+* The one consistent with the tinnitus information. i.e. if we get the tinnitus information from the last visit, then we need the age of the last visit.
+
+**iii)** Can you get the only age we want for controls? Please add a new column to the `df_recode` and show the first 20 rows of your answer.
+```{r}
+#YOUR CODE
+```
+\newpage
+
+### 3) GWAS model
+
+To identify genetic factors that may be involved in this trait (tinnitus), we would need to find the association between the genotype and the phenotype of each individual, however the genotype data is huge. Not to overwhelm you, we would use another simple dataset as an example to demonstrate what association study looks like.
+
+You can also get a chance to work with machine learning here!!
+
+**i)** In machine learning, we fit simple linear model with 2 variables from a data-set to see their relationship. For example `1/mpg` vs. `weight` in this Auto data-set. Is there association between `1/mpg of the car` and `weight of the car`? If so, it appearing to be positive or negative? Is it significant at 0.001 level? 
+
+```{r, echo=FALSE}
+# check if you have ISLR package, if not, install it
+if(!requireNamespace('ISLR')) install.packages('ISLR') 
+auto_data <- ISLR::Auto
+#  fit a model with these 3 variables:
+fit_1<-lm(mpg ~ weight, auto_data)
+summary(fit_1)
+
+# we can see from the plot, there is some year effect on weight, so usually we would fit the model with interaction to take a closer look.
+```
+
+
+```{r, echo=FALSE, message=FALSE,warning=FALSE}
+# plot year as factor to see the interaction:
+auto2<-auto_data %>%
+  mutate(GPM=1/mpg) %>%
+  mutate(year=as.factor(year)) %>%
+  mutate(origin_name = ifelse(origin==1 , "American", ifelse(origin==2,"European","Japanese"))) %>% 
+  select(-name,-mpg,-origin) # get rid of the "name" variable
+
+ggplot(auto2,aes(x=weight, y=GPM, color=year)) +
+  geom_point()+
+  geom_smooth(method="lm",se=F)+
+  labs(title = "Model with interactions, year as confounder")
+```
+**ii)**Could you please modify the codes above and plot "Model with interactions, origin_name as a confounder"? 
+```{r}
+#YOUR CODE
+```
+ 
+**iii)** In our genetics association study, we use linear mixed model which is an extension of simple linear models to allow both fixed and random effects, and are particularly used when there is non independence in the data. For example, patients could be sampled from different doctors, cars from different years/countries, as you have seen in the above example.
+
+Could you try to explain how linear mix model is apply to genetics association studies?
+Hint: phenotype(trait) --> GPM, genotype --> weight, other phenotypes (e.g. age) --> interaction/confounder.
+ 
+\newpage
+
+## Part 2: Totally optional (You can choose how many questions you'd love to answer, even none :P)
+
+### 1) Fine mapping
+
+**i)** We do fine mapping to take a closer look at specific genetic regions after GWAS. Here we play with a simple data-set after regression (don't worry about what regression means if you are not familiar with this term) and see what causal variants mean. 
+
+(You can check out more about susieR here:https://stephenslab.github.io/susieR/articles/finemapping.html)
+
+```{r}
+#devtools::install_github("stephenslab/susieR")
+library(susieR) #if you do not have susieR installed, please run the above command to install
+set.seed(1)
+data<-N3finemapping$data
+#data(N3finemapping)
+names(data)
+```
+
+We’ve simulated 2 sets of Y as 2 simulation replicates. Here we’ll show you part of the first set of Y.
+Here are the 3 “true” signals in the first set. 
+Running the follow example codes, you can see that the underlying causal variables are 403, 653 and 773.
+```{r example_code_fine_mapping}
+dim(data$Y)
+head(data$Y[,1])
+dim(data$true_coef)
+b <- data$true_coef[,1]
+plot(b, pch=16, ylab='effect size')
+which(b != 0)
+```
+
+Please try plotting the true signals of the second set as the first set shown above. And provide the causal variables.
+```{r}
+#YOUR CODE
+```
+
+**ii)**Try to explain why these dots in the plot are considered as true signals.
+
+** Comments
+Please leave any comments here.
+
