@@ -14,7 +14,7 @@ If you do not have any experience working with command-line interface (on Linux 
 
 ### Git
 
-All you need to do here is to clone the git repo and work with it using bash. You should receive an email notification asking you to join the github repository for this assignment. Please contact Gao if you don't have it. 
+All you need to do here is to clone the git repository for this assignment and work with it using bash. You should receive an email notification asking you to join the github repo. Please contact Gao if you don't have it. 
 
 You should learn about using `git` if you haven't used it before. If you are not familiar with `git` please walk through the [handbook](https://github.com/haoyueshuai/lab_tasks/blob/main/sos_meta_script.ipynb) to learn basic git. 
 
@@ -27,10 +27,12 @@ If you still have problem, please walk through the [handbook](https://github.com
 
 ## Task 2:  IPython notebook 
 
-This task is about a simple computational biology research practice.
-Regardless of your focus (on methods development or applied data analysis) it is required that all computational procedures in your daily research are well documented, organized and version controlled (using git) for review at any point. This task should give you an example of how you could develop the practice of clearly documenting with IPython notebook + JupyterLab. In the notebook, you can communicate your results as well as the code that generated them in a self-contained document. In particular, in a notebook you can put down notes in Markdown cells in between code cells to explain what you do.
+This task is about a simple computational biology research practice. This task should give you an example of how you could work with IPython notebook + JupyterLab.
+Regardless of your focus (on methods development or applied data analysis) it is required that all computational procedures in your daily research are well documented, organized and version controlled (using git) for review at any point. In order to do so, you can communicate your results as well as the code that generated them in a self-contained document, i.e. the notebook. 
 
-Here, we use [SoS suite](https://vatlab.github.io/sos-docs), a workflow system (pipeline tool) for batch data analysis and a multi-language notebook for interactive analysis, for your daily computing in research. SoS uses Jupyter as its IDE. It is super cool that it can work with R, Python, Bash and other languages in one notebook!
+Here in the Juoyter notebook, we use [SoS suite](https://vatlab.github.io/sos-docs), as the workflow system (pipeline tool). SoS is multi-language notebook for interactive analysis. it is super cool that it can work with R, Python, Bash and other languages in one notebook! For example in this [LMM_notebook]()
+
+What you need to do is to run this 
 
 Here are some tasks you should walk through:
 
