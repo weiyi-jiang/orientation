@@ -8,34 +8,29 @@ This page is created specifically for new comers to the lab.
 
 ## Task 1: Bash
 
-In this task you are going to install basic software and packages needed for the analysis
+In this task you are going to work with git, install basic software and packages needed for the analysis
 
 If you do not have any experience working with command-line interface (on Linux or Mac). Please follow this notebook - [handbook](https://github.com/haoyueshuai/lab_tasks/blob/main/sos_meta_script.ipynb) to guild you through this task.     
 
 ### Git
 
-You should receive an email notification asking you to join the github repository for this assignment. Please contact Gao if you don't have it. All you need to know here is to clone the git repo and work with it using bash.
+All you need to do here is to clone the git repo and work with it using bash. You should receive an email notification asking you to join the github repository for this assignment. Please contact Gao if you don't have it. 
 
 You should learn about using `git` if you haven't used it before. If you are not familiar with `git` please walk through the [handbook](https://github.com/haoyueshuai/lab_tasks/blob/main/sos_meta_script.ipynb) to learn basic git. 
 
 ### Software installation
 
-Here you need to install conda, SoS and docker for the following tasks. 
+Here you need to install conda, SoS and docker for the following tasks.
+Please follow this [setup_instruction](https://github.com/haoyueshuai/lab_tasks/blob/main/jupyter-setup.md).
 If you still have problem, please walk through the [handbook](https://github.com/haoyueshuai/lab_tasks/blob/main/sos_meta_script.ipynb). 
 
 
 ## Task 2:  IPython notebook 
 
-This task is about good computational biology research practice.
-Regardless of your focus (on methods development or applied data analysis) it is required that all computational
-procedures in your daily research should be documented, well organized and version controlled (using git) for review at any point.
+This task is about a simple computational biology research practice.
+Regardless of your focus (on methods development or applied data analysis) it is required that all computational procedures in your daily research are well documented, organized and version controlled (using git) for review at any point. This task should give you an example of how you could develop the practice of clearly documenting with IPython notebook + JupyterLab. In the notebook, you can communicate your results as well as the code that generated them in a self-contained document. In particular, in a notebook you can put down notes in Markdown cells in between code cells to explain what you do.
 
-With IPython notebook + JupyterLab you should develop the practice of clearly documenting what you do in research,
-and communicate your results as well as the code that generated them in a self-contained document.
-In particular, in a notebook you can put down notes in Markdown cells in between code cells to explain what you do.
-This may be less important to computer programmers but is very important to data scientists.
-
-An important reason we recommend Jupyter over Rstudio is because our work typically involves both interactive data analysis and bioinformatic workflows. I recommend using [SoS suite](https://vatlab.github.io/sos-docs), a workflow system (pipeline tool) for batch data analysis and a multi-language notebook for interactive analysis, for your daily computing in research. SoS uses Jupyter as its IDE.
+Here, we use [SoS suite](https://vatlab.github.io/sos-docs), a workflow system (pipeline tool) for batch data analysis and a multi-language notebook for interactive analysis, for your daily computing in research. SoS uses Jupyter as its IDE. It is super cool that it can work with R, Python, Bash and other languages in one notebook!
 
 Here are some tasks you should walk through:
 
