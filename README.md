@@ -2,16 +2,7 @@
 
 This page is created specifically for new comers to the lab.
 
-# Project resources
-
-For a quick overview of what we are up to, [here](../project_resource) is a curated list of project
-repositories of the lab. They are contributed by different past and current members in various styles,
-but are all meant to follow good computational research practice that makes our work easy to share
-and reproduce.
-
-**Please do one or more of the following tasks (or based on instructions Gao gave you)**.
-**Please make sure you use the best of your knowledge editing Markdown format files, that is, format things nicely and logically**.
-
+**Please try finishing one or more of the following tasks (or based on instructions Gao gave you)**.
 
 # Tasks
 
