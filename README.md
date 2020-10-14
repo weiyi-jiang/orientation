@@ -41,19 +41,17 @@ Learn from [this LMM example](https://github.com/haoyueshuai/lab_tasks/blob/main
 
 Here in the Juyter notebook, we use [SoS suite](https://vatlab.github.io/sos-docs), as the workflow system (pipeline tool). SoS is super cool that it can work with multi-language for interactive analysis in one notebook! For example in [this LMM example](https://github.com/haoyueshuai/lab_tasks/blob/main/LMM.ipynb), we use Bash, R and Python all together.
 
-What you need to do for this task is to run the minimal working example (MWE) of [this LMM example](https://github.com/haoyueshuai/lab_tasks/blob/main/LMM.ipynb) . And provide us your report of results.
+What you need to do for this task is to run the minimal working example (MWE) of [this LMM example](https://github.com/haoyueshuai/lab_tasks/blob/main/LMM.ipynb). And provide us your report of results. You should have manhattan plot and qq plot at least. It would nice if you could write up a notebook with the plots and some words describing your understanding of the analysis.
 
 If you use Debian based Linux desktop (Debian or Ubuntu) [here are some recommendations](https://github.com/haoyueshuai/lab_tasks/blob/main/debian-setup.md) on setting up your machine.
-
-
-    - If you use Debian based Linux desktop (Debian or Ubuntu) [here are some recommendations](../productivity_tips/#linux-distributions) on setting up your machine.
-
 
 ## Task 3:  Rstudio 
 
 Rstudio is alternative to JupyterLab for interactive anlaysis.  (see Rmd below for more details). This task requires some R skills and also minimal background of data science/machine learning/biostats.
 
-Please download this [R_assignment](https://github.com/haoyueshuai/lab_tasks/blob/main/assignment.Rmd) and [Data for this assignment](https://github.com/haoyueshuai/lab_tasks/blob/main/data/data_cleaned.csv) to finish this task.
+Please download this [R_assignment](https://github.com/haoyueshuai/lab_tasks/blob/main/assignment.Rmd) and [Data for this assignment](https://github.com/haoyueshuai/lab_tasks/blob/main/data/data_cleaned.csv) to finish this task and provide us your results, including the Rmd file and HTML report.
+
+**Please Google or ask us if you have any questions. Please add any comments into your final result/report and email it to Gao**.
 
 ## Additional reading
 - Learn from these examples interactive data analysis using SoS Notebook that allows for multiple languages inside one notebook (you can find and run them at: http://sosworkflows.com):
