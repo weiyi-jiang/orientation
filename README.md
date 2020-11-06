@@ -8,22 +8,18 @@ This page is created specifically for new comers to the lab.
 
 ## Task 1: Bash
 
-In this task you are going to work with git, install basic software and packages needed for the analysis
-
-If you do not have any experience working with command-line interface (on Linux or Mac). Please follow this notebook - [handbook](https://github.com/haoyueshuai/lab_tasks/blob/main/sos_meta_script.ipynb), which will to guild you through this task.     
-
-### Git
-
-All you need to do here is to clone the git repository for this assignment and work with it using bash. You should receive an email notification asking you to join the github repo. Please contact us if you don't have it. 
-
-You should learn about using `git` if you haven't used it before. If you are not familiar with `git` please walk through the [handbook](https://github.com/haoyueshuai/lab_tasks/blob/main/sos_meta_script.ipynb) to learn basic git. 
+In this task you are going to install basic software and packages needed for the analysis, and work with git.
 
 ### Software installation
 
 Here you need to install conda, SoS and docker for the following tasks.
 Please follow this [setup_instruction](https://github.com/haoyueshuai/lab_tasks/blob/main/jupyter-setup.md).
-If you still have problem, please see here  [handbook](https://github.com/haoyueshuai/lab_tasks/blob/main/sos_meta_script.ipynb). 
 
+### Git
+
+All you need to do here is to clone the git repository for this assignment and work with it using bash. You should receive an email notification asking you to join the github repo. Please contact us if you don't have it. 
+
+You should learn about using `git` if you haven't used it before. If you are not familiar with `git` please walk through the [handbook](https://github.com/haoyueshuai/lab_tasks/blob/main/sos_meta_script.ipynb) to learn basic bash/git. 
 
 ## Task 2:  IPython notebook 
 
