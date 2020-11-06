@@ -38,7 +38,7 @@ Learn from [this LMM example](https://github.com/haoyueshuai/lab_tasks/blob/main
 
 Here in the Juyter notebook, we use [SoS suite](https://vatlab.github.io/sos-docs), as the workflow system (pipeline tool). SoS is super cool that it can work with multi-language for interactive analysis in one notebook! For example in [this LMM example](https://github.com/haoyueshuai/lab_tasks/blob/main/LMM.ipynb), we use Bash, R and Python all together.
 
-**What you need to do for this task is to run the minimal working example (MWE) of [this LMM example](https://github.com/haoyueshuai/lab_tasks/blob/main/LMM.ipynb). You can choose to run Boltlmm or FastGWA. You can find data here: [LMM_MWE](https://github.com/haoyueshuai/lab_tasks/tree/main/LMM_MWE). Please only provide us your report of results. You should have manhattan plot and qq plot at least. It would be nicer if you could come up with a notebook in the format suggested as above.**
+**What you need to do for this task is to run the minimal working example (MWE) of [this LMM example](https://github.com/haoyueshuai/lab_tasks/blob/main/LMM.ipynb). You will  need to run Boltlmm and Regenie. We have provided the example of FastGWA  [here](https://github.com/haoyueshuai/lab_tasks/blob/main/sos_meta_script.ipynb). You can find data here: [LMM_MWE](https://github.com/haoyueshuai/lab_tasks/tree/main/LMM_MWE). Please only provide us your report of results. You should have manhattan plot and qq plot at least. It would be nicer if you could come up with a notebook in the format suggested as above.**
 
 If you use Debian based Linux desktop (Debian or Ubuntu) [here are some recommendations](https://github.com/haoyueshuai/lab_tasks/blob/main/debian-setup.md) on setting up your machine.
 
