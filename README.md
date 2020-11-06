@@ -10,11 +10,11 @@ This page is created specifically for new comers to the lab.
 
 In this task you are going to work with git, install basic software and packages needed for the analysis
 
-If you do not have any experience working with command-line interface (on Linux or Mac). Please follow this notebook - [handbook](https://github.com/haoyueshuai/lab_tasks/blob/main/sos_meta_script.ipynb) to guild you through this task.     
+If you do not have any experience working with command-line interface (on Linux or Mac). Please follow this notebook - [handbook](https://github.com/haoyueshuai/lab_tasks/blob/main/sos_meta_script.ipynb), which will to guild you through this task.     
 
 ### Git
 
-All you need to do here is to clone the git repository for this assignment and work with it using bash. You should receive an email notification asking you to join the github repo. Please contact Gao if you don't have it. 
+All you need to do here is to clone the git repository for this assignment and work with it using bash. You should receive an email notification asking you to join the github repo. Please contact us if you don't have it. 
 
 You should learn about using `git` if you haven't used it before. If you are not familiar with `git` please walk through the [handbook](https://github.com/haoyueshuai/lab_tasks/blob/main/sos_meta_script.ipynb) to learn basic git. 
 
@@ -22,7 +22,7 @@ You should learn about using `git` if you haven't used it before. If you are not
 
 Here you need to install conda, SoS and docker for the following tasks.
 Please follow this [setup_instruction](https://github.com/haoyueshuai/lab_tasks/blob/main/jupyter-setup.md).
-If you still have problem, please walk through the [handbook](https://github.com/haoyueshuai/lab_tasks/blob/main/sos_meta_script.ipynb). 
+If you still have problem, please see here  [handbook](https://github.com/haoyueshuai/lab_tasks/blob/main/sos_meta_script.ipynb). 
 
 
 ## Task 2:  IPython notebook 
@@ -42,7 +42,7 @@ Learn from [this LMM example](https://github.com/haoyueshuai/lab_tasks/blob/main
 
 Here in the Juyter notebook, we use [SoS suite](https://vatlab.github.io/sos-docs), as the workflow system (pipeline tool). SoS is super cool that it can work with multi-language for interactive analysis in one notebook! For example in [this LMM example](https://github.com/haoyueshuai/lab_tasks/blob/main/LMM.ipynb), we use Bash, R and Python all together.
 
-**What you need to do for this task is to run the minimal working example (MWE) of [this LMM example](https://github.com/haoyueshuai/lab_tasks/blob/main/LMM.ipynb). You can choose to run Boltlmm or FastGWA. You can find data here: [LMM_MWE](https://github.com/haoyueshuai/lab_tasks/tree/main/LMM_MWE). Please only provide us your report of results. You should have manhattan plot and qq plot at least. It would be nicer if you could write up a notebook as above, with simple organization of the plots and words describing your understanding of the analysis**.
+**What you need to do for this task is to run the minimal working example (MWE) of [this LMM example](https://github.com/haoyueshuai/lab_tasks/blob/main/LMM.ipynb). You can choose to run Boltlmm or FastGWA. You can find data here: [LMM_MWE](https://github.com/haoyueshuai/lab_tasks/tree/main/LMM_MWE). Please only provide us your report of results. You should have manhattan plot and qq plot at least. It would be nicer if you could come up with a notebook in the format suggested as above.**
 
 If you use Debian based Linux desktop (Debian or Ubuntu) [here are some recommendations](https://github.com/haoyueshuai/lab_tasks/blob/main/debian-setup.md) on setting up your machine.
 
