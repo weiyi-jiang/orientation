@@ -1,62 +1,31 @@
-# Thank you for being interested in our lab!
+# Orientation exercises
 
-This page is created specifically for new comers to the lab.
+This tutorial & exercise is designed for trainees interested in joining our lab. It reflects our expected computing skills using R, Python, Linux shell commands and bioinformatics workflow languages.
+Even if you lack the skills for one or more of the languages at the time you start this tutorial, we believe the learning curve for new skills enough to complete the exercises is reasonable. Still,
+please do not hesitate to contact Gao if there is a blocker as you go through the material. 
 
-**Please try finishing one or more of the following tasks (or based on instructions Gao gave you)**.
-
-# Tasks
-
-## Task 1: Bash
+## Task 1: Linux command shell and command tools
 
 In this task you are going to install basic software and packages needed for the analysis, and work with git.
 
 ### Software installation
 
-Here you need to install conda, SoS and docker for the following tasks.
-Please follow this [setup_instruction](https://github.com/haoyueshuai/lab_tasks/blob/main/jupyter-setup.md).
+This tutorial (and our research in general) requires `R`, `Python`, `Script of Scripts (SoS)` bioinformatics workflow system and `docker`.
+Please follow this [setup instruction](http://statgen.us/lab-wiki/orientation/jupyter-setup.html) to complete the installations.
 
 ### Git
 
-All you need to do here is to clone the git repository for this assignment and work with it using bash. You should receive an email notification asking you to join the github repo. Please contact us if you don't have it. 
+Most of our work will be saved and shared on github in public or private repositories. If you have not used git in the past, please follow the [instructions here for a 5 minutes git tutorial](http://statgen.us/lab-wiki/orientation/5m-git).
 
-You should learn about using `git` if you haven't used it before. If you are not familiar with `git` please walk through the [handbook](https://github.com/haoyueshuai/lab_tasks/blob/main/sos_meta_script.ipynb) to learn basic bash/git. 
+As the next step please [fork](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo) this repository, add your name to the file named `hello.md`, commit it to github and [create a pull request](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/about-pull-requests) so we can see your update and incorporate it to the repository.
 
-## Task 2:  IPython notebook 
+## Task 2:  IPython notebook and SoS bioinformatics workflow
 
-Note: In order to finish this task, you need to finish task one first. 
+This task is an example of a bioinformatics workflow developed at our group. It uses IPython notebook (with JupyterLab IDE as a recommendation), and runs an [SoS kernel for bioinformatics workflows](https://vatlab.github.io/sos-docs/).
 
-This task is about a simple computational biology research practice. This task should give you an example of how you could work with IPython notebook + JupyterLab. Regardless of your focus (on methods development or applied data analysis), it is required that all computational procedures in your daily research are well documented, organized and version controlled (using git) for review. In order to do so, you can communicate your results as well as the code that generated them in a self-contained document, i.e. the notebook. 
+Please find the example notebook file `orientation.ipynb`, follow the instructions and complete the Quiz at the end of the notebook. 
 
-Learn from [this LMM example](https://github.com/haoyueshuai/lab_tasks/blob/main/LMM.ipynb) the suggested format to write and report computational analysis. The suggested format is as follows:
+## Task 3:  R programming 
 
-    1. Title and in the same notebook cell **a brief one sentence summary** of what the notebook is about.
-    2. Motivation or Aims: describe the problem under investigation.
-    3. Methods overview: a high-level description of methods used to solve the problem.
-    4. Main conclusion: (not applicable to a pure workflow notebook): take home message from your investigations.
-    5. Data input and output (if applicable): describe data used and generated from the notebook.
-    6. The rest of the notebook: multiple sections of detailed steps, with interactive codes / workflows and narratives, as well as diagnostic summary statistics, plots and tables at each step.
-
-Here in the Juyter notebook, we use [SoS suite](https://vatlab.github.io/sos-docs), as the workflow system (pipeline tool). SoS is super cool that it can work with multi-language for interactive analysis in one notebook! For example in [this LMM example](https://github.com/haoyueshuai/lab_tasks/blob/main/LMM.ipynb), we use Bash, R and Python all together.
-
-**What you need to do for this task is to run the minimal working example (MWE) of [this LMM example](https://github.com/haoyueshuai/lab_tasks/blob/main/LMM.ipynb). You will  need to run Boltlmm and Regenie. We have provided the example of FastGWA  [here](https://github.com/haoyueshuai/lab_tasks/blob/main/sos_meta_script.ipynb). You can find data here: [LMM_MWE](https://github.com/haoyueshuai/lab_tasks/tree/main/LMM_MWE). Please only provide us your report of results. You should have manhattan plot and qq plot at least. It would be nicer if you could come up with a notebook in the format suggested as above.**
-
-If you use Debian based Linux desktop (Debian or Ubuntu) [here are some recommendations](https://github.com/haoyueshuai/lab_tasks/blob/main/debian-setup.md) on setting up your machine.
-
-## Task 3:  Rstudio 
-
-Note: Task one is not a prerequisite of this task.
-
-Rstudio is alternative to JupyterLab for interactive anlaysis.  (see Rmd below for more details). This task requires some R skills, also some minimal background of data science/machine learning/biostats.
-
-Please download this [R_assignment](https://github.com/haoyueshuai/lab_tasks/blob/main/assignment.Rmd) and [Data for this assignment](https://github.com/haoyueshuai/lab_tasks/blob/main/data/data_cleaned.csv) to finish this task and provide us your results, including the Rmd file and HTML report.
-
-**Please Google or ask us if you have any technical questions**. 
-
-**Please add any comments into your result/report and email the final version to Gao**.
-
-## Additional reading FYI
-- Learn from these examples interactive data analysis using SoS Notebook that allows for multiple languages inside one notebook (you can find and run them at: http://sosworkflows.com):
-    - [Data exchange between languages](https://github.com/vatlab/sos/blob/master/development/docker-demo/examples/JupyterCon18/2_Data_Exchange.ipynb)
-    - [SoS Notebook built-in commands](https://github.com/vatlab/sos/blob/master/development/docker-demo/examples/JupyterCon18/3_SoS_Magics.ipynb)
-- How to organize computational research projects
-    - [This paper](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424), [this paper](http://journals.plos.org/ploscollections/article?id=10.1371%2Fjournal.pcbi.1004385) and [this post](http://nicercode.github.io/blog/2013-04-05-projects/).
+Please follow the instructions and complete the R exercise `orientation.Rmd`. `Rmd` stands for R Markdown. They are text file with R code and narratives that you can open and analyze using software such as Rstudio, 
+or, you can also start a Jupyter Notebook and copy the contents to the notebook to analyze. If you use Jupyter Notebook please separate the markdown text and R codes into different cells.

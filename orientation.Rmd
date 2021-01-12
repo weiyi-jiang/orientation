@@ -1,0 +1,205 @@
+---
+title: "R exercise: phenotype data proprocessing"
+author: "Haoyue Shuai"
+date: "Oct. 8th, 2020"
+output:
+  html_document:
+    code_folding: show
+    highlight: haddock
+    theme: lumen
+    toc: yes
+    toc_depth: 4
+    toc_float: yes
+  word_document:
+    toc: yes
+    toc_depth: '4'
+  pdf_document:
+    toc: yes
+    toc_depth: 4
+---
+
+```{r setup, include=FALSE}
+#please do not touch this chunk
+knitr::opts_chunk$set(echo = TRUE, results = "hold",fig.width = 7, fig.height = 4)
+if(!require("pacman")) install.packages("pacman")
+pacman::p_load(dplyr, ggplot2, plyr, tidyverse, pander, ggpubr, rapportools, knitr, pROC, reshape2)  
+```
+
+\newpage
+
+## Instruction
+
+This exercise was adapted by Haoyue Shuai from one of her analysis on phenotype data in preparation for genetic association studies. Don't panic if you're just started learning R. The exercise does not involve writing serious software programs in R, but rather to execute some interactive and intuitive commands
+to get some preliminary phenotype data analysis done. There will be some questions throughout that you can answer in your own words and intuition with a few sentences. R codes to answer these questions are provided as examples but you need to find and modify the relevant
+codes to address to the questions. There are also some optional tasks for those with stronger programming background and/or interested in pushing it further.
+
+If you use Jupyter Notebook, please show your answers, codes and plots in the notebook when needed. If you work directly with this Rmd file and use R studio, please convert it into HTML format for us to review (simply by clicking the knit icon in your Rstudio toolbar). 
+Please email the Jupyter Notebook or the Rmd + HTML files to us at wang.gao@columbia.edu.
+
+
+### Dataset 
+
+The data-set can be found as `UKB_Phenotype/data_cleaned.csv`.
+
+Please don't hesitate to contact us for any scientific or technical blockers, if you cannot find a solution yourself online.
+
+\newpage
+
+\newpage 
+
+## Genetic association study
+
+We perform genetic association studies to identify genetic factors (variants) that may be involved in a particular trait (tinnitus, asthma, etc).
+In brief, genetic association studies compare the genetic data of individuals with disease (cases) to those without (controls). 
+If a genetic variant is observed more frequently in cases than in controls, then the variant might be involved in the disease etiology and is worth following up further.
+
+In order to do genetic association studies, we need phenotype data and genotype data from cases and controls.
+
+Phenotype data: ID, age, height, BMI, condition for that trait (tinnitus in this case), etc.
+Genotype data: You can roughly understand it as a sequence of the bases in DNA molecules, A/T/C/G, for all chromosomes in human genome.
+
+### Disease phenotype data 
+
+We use a toy data-set extracted from the UK Biobank project.
+
+**Load the data**
+
+Load `UKB_Phenotype/data_cleaned.csv`. Note, you only need to complete the codes when seeing `YOUR CODE`. Please execute other existing codes as is.
+
+```{r}
+# you need to put the data-set in the same folder
+# where this .rmd file sits,
+# which is here:
+getwd()
+sub_UKBB<-read.csv("data_cleaned.csv")
+```
+
+**Exploratory data analysis (EDA) of the data**
+```{r}
+dim(sub_UKBB) # This data covering 144756 participants and 11 variables of them (IID, FID, etc)
+```
+
+```{r}
+colnames(sub_UKBB) # 11 variables 
+```
+
+```{r}
+summary(sub_UKBB) 
+```
+
+```{r}
+head(sub_UKBB) # show part of the data
+```
+
+**i)** How many females and males are there in this data?
+ 
+**ii)** Can you tell what kind of trait it is for tinnitus? 
+A.Binary trait. B. Continuous trait. 
+
+**iii)** Recode f.4803
+
+Field 4803 (f.4803) is the answers from participants for ACE touchscreen question "Do you get or have you had noises (such as ringing or buzzing) in your head or in one or both ears that lasts for more than five minutes at a time?" 
+
+These fields contains answers to the questions in their first, 2nd, 3rd and 4th hospital visit: f.4803.0.0, f.4803.1.0, f.4803.2.0, f.4803.3.0. 
+
+```{r recode}
+# Recode function:
+recode<-function(df,column_name){
+  new_names<-c()
+  for (i in column_name){
+    new_column_name<-paste0(i,"_recode")
+    new_names<-c(new_names,new_column_name)
+    df[,new_column_name] <- revalue(df[,i], c("No, never"= 0, 
+                                            "Yes, but not now, but have in the past"= 1, 
+                                            "Yes, now some of the time"= 1, 
+                                            "Yes, now a lot of the time"= 1,
+                                            "Yes, now most or all of the time"= 1,
+                                            "Prefer not to answer"= NA,
+                                            "Do not know"= NA ))
+  }
+  return (list(df=df,new_column_names=new_names))
+}
+
+# columns needs to be recoded:
+column_name<-c("f.4803.0.0","f.4803.1.0","f.4803.2.0","f.4803.3.0")
+
+# get a new data.frame with recoded columns added:
+df_recode<-recode(df=sub_UKBB,column_name)$df
+
+# get names of recoded columns:
+new_column_names<-recode(df=sub_UKBB,column_name)$new_column_names
+
+# show recode summary:
+for (i in new_column_names)
+{cat(i,"summary:");print(table(df_recode[,i]));cat("\n")}
+```
+
+What do you think has been achieved by recoding these fields?
+
+**iv)** Define cases and controls of tinnitus for each participants
+
+```{r}
+data_sub <- df_recode[,new_column_names]
+# Function to define cases
+f<-function(x){
+  visit<-c()
+  for (i in 1:4){
+    if (!is.na(x[i]))
+    {visit<-c(visit,x[i])}
+  }
+  if ("1" %in% visit){result= TRUE}
+  else{result=FALSE}
+  return (result)
+}
+# Apply the above function
+df_recode$cases<-apply(data_sub, 1, f)
+head(df_recode,10)
+```
+**v)** Get the subset of cases/controls of tinnitus from all participants, and extract a subset of columns. 
+
+```{r}
+df_cases  <- df_recode %>%
+  select(IID,FID,cases)%>% 
+  filter(cases==TRUE)
+head(df_cases,10)  
+```
+Please modify codes above to extract all the controls and keep only these columns: `FID`, `IID`, `cases`, `f.22001.0.0`, `f.21003.0.0`, `f.21003.1.0`, `f.21003.2.0`, `f.21003.3.0`. Please show the first 10 rows of the output.
+```{r}
+# YOUR CODE
+```
+\newpage
+
+### Covariates
+ 
+**i)** Field 21003 contains the information of the age of participants, same as field 4803. Note that some of them have more than one age. Can you guess why?
+
+**ii)** For those with more than one age records, which age do you think should be used in the genetic association analysis?
+
+**iii)** Please compute a summary of age information for controls (you can use `summary()` function in R):
+```{r}
+#YOUR CODE
+```
+\newpage
+
+### Association testing via regression analysis
+
+To identify genetic factors that may be involved in this trait (tinnitus), we would need to find the association between the genotype and the phenotype of each individual. 
+Regression analysis is the basis of many association analysis. Instead of overwhelming you with huge genotype data, we use here a simple dataset for regression analysis to demonstrate what association studies look like.
+
+
+We fit below simple linear model with 2 variables from a data-set to see their relationship. For example `1/mpg` vs. `weight` in this Auto data-set. Is there association between `1/mpg of the car` and `weight of the car`? If so, it appearing to be positive or negative? Is the association significant and why? 
+
+```{r, echo=FALSE}
+# check if you have ISLR package, if not, install it
+if(!requireNamespace('ISLR')) install.packages('ISLR') 
+auto_data <- ISLR::Auto
+#  fit a linear regression model
+fit_1<-lm(mpg ~ weight, auto_data)
+summary(fit_1)
+```
+
+Please find variable `year` in the data-set, create a new variable to indicate cars older than year 76 as 0, otherwise 1, then use logistic regrssion via `glm()` function to analyze association between weight and this new variable you just created.
+
+```{r}
+#YOUR CODE
+```
