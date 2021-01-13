@@ -1,8 +1,10 @@
 # Orientation exercises
 
 This tutorial & exercise is designed for trainees interested in joining our lab. It reflects our expected computing skills using R, Python, Linux shell commands and bioinformatics workflow languages.
-Even if you lack the skills for one or more of the languages at the time you start this tutorial, we believe the learning curve for new skills enough to complete the exercises is reasonable. Still,
-please do not hesitate to contact Gao if there is a blocker as you go through the material. 
+Even if you lack the skills for one or more of the languages at the time you start this tutorial, we believe the learning curve for new skills enough to complete the exercises is reasonable given a few hours of efforts. Still,
+please do not hesitate to contact us (wang.gao@columbia.edu) if there is a blocker as you go through the material. 
+
+An additional note on efforts: for student interns and research assistants we expect a minimum of 10hrs/week effort.
 
 ## Task 1: Linux command shell and command tools
 
