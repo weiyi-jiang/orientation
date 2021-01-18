@@ -88,12 +88,12 @@ summary(sub_UKBB)
 head(sub_UKBB) # show part of the data
 ```
 
-**i)** How many females and males are there in this data?
+**Q1:** How many females and males are there in this data? Please show your code below how these numbers are computed.
  
-**ii)** Can you tell what kind of trait it is for tinnitus? 
+**Q2:** Can you tell what kind of trait it is for tinnitus? 
 A.Binary trait. B. Continuous trait. 
 
-**iii)** Recode f.4803
+**Q3:** Recode f.4803
 
 Field 4803 (f.4803) is the answers from participants for ACE touchscreen question "Do you get or have you had noises (such as ringing or buzzing) in your head or in one or both ears that lasts for more than five minutes at a time?" 
 
@@ -133,7 +133,7 @@ for (i in new_column_names)
 
 What do you think has been achieved by recoding these fields?
 
-**iv)** Define cases and controls of tinnitus for each participants
+**Q4:** Define case and control status of tinnitus for each participant in the study:
 
 ```{r}
 data_sub <- df_recode[,new_column_names]
@@ -152,7 +152,10 @@ f<-function(x){
 df_recode$cases<-apply(data_sub, 1, f)
 head(df_recode,10)
 ```
-**v)** Get the subset of cases/controls of tinnitus from all participants, and extract a subset of columns. 
+
+How many cases and how many controls do we have for this phenotpype?
+
+**Q5:** Extract a subset of columns from all participants for association study. 
 
 ```{r}
 df_cases  <- df_recode %>%
@@ -168,11 +171,11 @@ Please modify codes above to extract all the controls and keep only these column
 
 ### Covariates
  
-**i)** Field 21003 contains the information of the age of participants, same as field 4803. Note that some of them have more than one age. Can you guess why?
+**Q6:** Field 21003 contains the information of the age of participants, same as field 4803. Note that some of them have more than one age. Can you guess why?
 
-**ii)** For those with more than one age records, which age do you think should be used in the genetic association analysis?
+**Q7:** For those with more than one age records, which age do you think should be used in the genetic association analysis?
 
-**iii)** Please compute a summary of age information for controls (you can use `summary()` function in R):
+**Q8:** Please compute a summary of age information for controls (you can use `summary()` function in R):
 ```{r}
 #YOUR CODE
 ```
@@ -184,7 +187,9 @@ To identify genetic factors that may be involved in this trait (tinnitus), we wo
 Regression analysis is the basis of many association analysis. Instead of overwhelming you with huge genotype data, we use here a simple dataset for regression analysis to demonstrate what association studies look like.
 
 
-We fit below simple linear model with 2 variables from a data-set to see their relationship. For example `1/mpg` vs. `weight` in this Auto data-set. Is there association between `1/mpg of the car` and `weight of the car`? If so, it appearing to be positive or negative? Is the association significant and why? 
+We fit below simple linear model with 2 variables from a data-set to see their relationship. For example `1/mpg` vs. `weight` in this Auto data-set. 
+
+**Q9:** Is there association between `1/mpg of the car` and `weight of the car`? If so, it appearing to be positive or negative? Is the association significant and why? 
 
 ```{r, echo=FALSE}
 # check if you have ISLR package, if not, install it
@@ -195,7 +200,7 @@ fit_1<-lm(mpg ~ weight, auto_data)
 summary(fit_1)
 ```
 
-Please find variable `year` in the data-set, create a new variable to indicate cars older than year 76 as 0, otherwise 1, then use logistic regrssion via `glm()` function to analyze association between weight and this new variable you just created.
+**Q10:** Please find variable `year` in the data-set, create a new variable to indicate cars older than year 76 as 0, otherwise 1, then use logistic regrssion via `glm()` function to analyze association between weight and this new variable you just created.
 
 ```{r}
 #YOUR CODE
