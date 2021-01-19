@@ -33,7 +33,7 @@ This exercise was adapted by Haoyue Shuai from one of her analysis on phenotype 
 to get some preliminary phenotype data analysis done. There will be some questions throughout that you can answer using your own words (and some data science intuition) with a few sentences. Some of them involve writing additional codes but you can mostly find and modify codes we provide as examples to address the questions. You do not have to answer all the questions but we strongly encourage you to make an attempt.
 
 If you use Jupyter Notebook, please show your answers, codes and plots in the notebook when needed. If you work directly with this Rmd file and use R studio, please convert it into HTML format for us to review (simply by clicking the knit icon in your Rstudio toolbar). 
-Please email the Jupyter Notebook or the Rmd + HTML files to us at wang.gao@columbia.edu. Please don't hesitate to contact us for any scientific or technical blockers, if you cannot find a solution yourself online.
+Please push the Jupyter Notebook or the Rmd + HTML files to your fork repository on github, then send us a link to it at wang.gao@columbia.edu. Please don't hesitate to contact us for any scientific or technical blockers, if you cannot find a solution yourself online.
 
 
 ### Dataset 
