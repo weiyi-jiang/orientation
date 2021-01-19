@@ -50,7 +50,6 @@ Methods with applications:
 - Evaluation of fine-mapping in unbalanced case-control design
 - Matrix completion and prediction of Alzheimer's disease risk using epidemiological records
 - Alzheimer's disease risk prediction and subtyping using whole genome sequence data
-- Multi-tissue fine-mapping for splice QTL data in GTEx project
 
 Applied data analysis:
 
@@ -61,6 +60,7 @@ Applied data analysis:
 - Statistical fine-mapping with functional genomic annotations
 - Linear mixed model analysis of various phenotypes in UK Biobank data
 - Improve and implement fine-mapping pipeline for UK Biobank data analysis (univariate and multivariate)
+- Multi-tissue fine-mapping for splice QTL data in GTEx project
 
 Software development:
 
