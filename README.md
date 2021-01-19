@@ -32,3 +32,31 @@ Please find the example notebook file `orientation.ipynb`, follow the instructio
 
 Please follow the instructions and complete the R exercise `orientation.Rmd`. `Rmd` stands for R Markdown. They are text file with R code and narratives that you can open and analyze using software such as Rstudio, 
 or, you can also start a Jupyter Notebook and copy the contents to the notebook to analyze. If you use Jupyter Notebook please separate the markdown text and R codes into different cells.
+
+## Moving forward
+
+After you have completed the tasks please notify us (wang.gao@columbia.edu) with a link to your fork repository on github. We will review and determine a fit for you based on your response. Projects available for Spring 2021 include:
+
+Methods with applications:
+
+- Rare variant association analysis in family data
+- Method for gene-gene / gene-environment interaction in large-scale association studies
+- Inference of kinship in ancient DNA data 
+- Statistical fine-mapping in family-based study designs
+- Statistical fine-mapping in multiple ancestries
+- Multi-tissue alternative polyadenylation calling from brain RNA-seq data
+- Statistical benchmark for colocalization analysis
+- Copy number variation association study for Alzheimer's disease
+- Evaluation of fine-mapping in unbalanced case-control design
+- Matrix completion and prediction of Alzheimer's disease risk using epidemiological records
+- Alzheimer's disease risk prediction and subtyping using whole genome sequence data
+
+Applied data analysis:
+
+- Rare variant association studies with exome data in Alzheimer's disease families
+- Gene-gene and gene-environment interaction analysis in UK Biobank data for Asthma
+- Pleiotropy and mediation analysis in UK Biobank data
+- Development of polygenic risk score prediction pipeline
+- Statistical fine-mapping with functional genomic annotations
+- Linear mixed model analysis of various phenotypes in UK Biobank data
+- Improve and implement fine-mapping pipeline for UK Biobank data analysis (univariate and multivariate)
