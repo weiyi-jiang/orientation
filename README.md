@@ -60,3 +60,10 @@ Applied data analysis:
 - Statistical fine-mapping with functional genomic annotations
 - Linear mixed model analysis of various phenotypes in UK Biobank data
 - Improve and implement fine-mapping pipeline for UK Biobank data analysis (univariate and multivariate)
+
+Software development:
+
+- [SEQSpark](https://github.com/statgenetics/seqspark)
+- [Dynamic Statistical Comparisons](https://github.com/stephenslab/dsc)
+
+Please also find here [a list of past and ongoing projects in our group](http://statgen.us/lab-wiki/project_resource/project.html). 
