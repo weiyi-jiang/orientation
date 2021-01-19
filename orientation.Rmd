@@ -187,9 +187,9 @@ To identify genetic factors that may be involved in this trait (tinnitus), we wo
 Regression analysis is the basis of many association analysis. Instead of overwhelming you with huge genotype data, we use here a simple dataset for regression analysis to demonstrate what association studies look like.
 
 
-We fit below simple linear model with 2 variables from a data-set to see their relationship. For example `1/mpg` vs. `weight` in this Auto data-set. 
+We fit below simple linear model with 2 variables from a data-set to see their relationship. For example `mpg` vs. `weight` in this Auto data-set. 
 
-**Q9:** Is there association between `1/mpg of the car` and `weight of the car`? If so, it appearing to be positive or negative? Is the association significant and why? 
+**Q9:** Is there association between `mpg of the car` and `weight of the car`? If so, it appearing to be positive or negative? Is the association significant and why? 
 
 ```{r, echo=FALSE}
 # check if you have ISLR package, if not, install it
@@ -200,7 +200,9 @@ fit_1<-lm(mpg ~ weight, auto_data)
 summary(fit_1)
 ```
 
-**Q10:** Please find variable `year` in the data-set, create a new variable to indicate cars older than year 76 as 0, otherwise 1, then use logistic regrssion via `glm()` function to analyze association between weight and this new variable you just created.
+**Q10:** Please create a new variable to indicate cars having MPG greater than 23 as 1, otherwise 0, then use logistic regrssion via `glm()` function to analyze association between weight and this new variable you just created. Please comment on what you find.
+
+**Q11:** Find the `Estimates` from your asociation results summary. How do you interpret the estimated effects of weight in the context of linear regression, and in the context of logististic regression? (this question might be a bit challenging if you are not familiar with regression analysis; don't sweat if you cannot find the answer for it).
 
 ```{r}
 #YOUR CODE
