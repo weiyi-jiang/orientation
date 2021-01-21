@@ -6,3 +6,4 @@
 | Liushiya Chen | theShiya |
 | Rommel Nunez | rommelnunez |
 | Aditya Kankariya | adityakankariya |
+| Katrina Zhao | kzhao18 |
