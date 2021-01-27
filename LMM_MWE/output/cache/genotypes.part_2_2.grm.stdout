@@ -1,0 +1,38 @@
+[0;32m[0m*******************************************************************
+[0;32m[0m* Genome-wide Complex Trait Analysis (GCTA)
+[0;32m[0m* version 1.93.2 beta Linux
+[0;32m[0m* (C) 2010-present, Jian Yang, The University of Queensland
+[0;32m[0m* Please report bugs to Jian Yang <jian.yang.qt@gmail.com>
+[0;32m[0m*******************************************************************
+[0;32mAnalysis started [0mat 16:04:20 UTC on Wed Jan 27 2021.
+[0;32m[0mHostname: bf127ebf767d
+[0;32m[0m
+[0;32m[0mOptions: 
+[0;32m[0m 
+--bfile genotypes 
+--make-grm-part 2 2 
+--thread-num 1 
+--out output/cache/genotypes 
+[0;32m[0m
+[0;32m[0mThe program will be running on up to 1 threads.
+[0;32m[0mNote: GRM is computed using the SNPs on the autosome.
+[0;32m[0mReading PLINK FAM file from [genotypes.fam]...
+[0;32m[0m100 individuals to be included from FAM file.
+100 individuals to be included. 50 males, 50 females, 0 unknown.
+[0;32m[0mReading PLINK BIM file from [genotypes.bim]...
+[0;32m[0m529024 SNPs to be included from BIM file(s).
+[0;32m[0mComputing the genetic relationship matrix (GRM) v2 ...
+[0;32m[0mSubset 2/2, no. subject 65-100
+  [0;32m[0m36 samples, 529024 markers, 2970 GRM elements
+[0;32m[0mIDs for the GRM file has been saved in the file [output/cache/genotypes.part_2_2.grm.id]
+Computing GRM...
+  [0;32m[0m100% finished in 61.5 sec
+529024 SNPs have been processed.
+  Used 524444 valid SNPs.
+[0;32m[0mThe GRM computation is completed.
+[0;32m[0mSaving GRM...
+[0;32m[0mGRM has been saved in the file [output/cache/genotypes.part_2_2.grm.bin]
+[0;32m[0mNumber of SNPs in each pair of individuals has been saved in the file [output/cache/genotypes.part_2_2.grm.N.bin]
+[0;32m[0m
+[0;32mAnalysis finished [0mat 16:05:23 UTC on Wed Jan 27 2021
+Overall computational time: 1 minute 4 sec.

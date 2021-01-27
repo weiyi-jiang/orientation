@@ -1,0 +1,2 @@
+output/cache/imputed_genotypes_chr21.phenotypes.fastGWA.gz: 25
+output/cache/imputed_genotypes_chr22.phenotypes.fastGWA.gz: 22

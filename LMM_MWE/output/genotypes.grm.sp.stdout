@@ -1,0 +1,24 @@
+[0;32m[0m*******************************************************************
+[0;32m[0m* Genome-wide Complex Trait Analysis (GCTA)
+[0;32m[0m* version 1.93.2 beta Linux
+[0;32m[0m* (C) 2010-present, Jian Yang, The University of Queensland
+[0;32m[0m* Please report bugs to Jian Yang <jian.yang.qt@gmail.com>
+[0;32m[0m*******************************************************************
+[0;32mAnalysis started [0mat 16:05:28 UTC on Wed Jan 27 2021.
+[0;32m[0mHostname: 4d09eced6481
+[0;32m[0m
+[0;32m[0mOptions: 
+[0;32m[0m 
+--grm output/genotypes 
+--make-bK-sparse 0.05 
+--out output/genotypes 
+[0;32m[0m
+[0;32m[0mPruning the GRM to sparse with a cut off of 0.050000...
+[0;32m[0mTotal number of parts to proceed: 1
+    [0;32m[0mSaving 100 individual IDs
+    [0;32m[0mProcessing part 1
+[0;32m[0mSaving GRM sparse (100 pairs) to [output/genotypes.grm.sp]
+[0;32mmake GRM sparse finished [0mSuccess:
+[0;32m[0m
+[0;32mAnalysis finished [0mat 16:05:28 UTC on Wed Jan 27 2021
+Overall computational time: 0.28 sec.

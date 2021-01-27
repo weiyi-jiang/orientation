@@ -1,0 +1,174 @@
+output/cache/imputed_genotypes_chr21.phenotypes.fastGWA.gz stderr:
+output/cache/imputed_genotypes_chr21.phenotypes.fastGWA.gz stdout:
+[0;32m[0m*******************************************************************
+[0;32m[0m* Genome-wide Complex Trait Analysis (GCTA)
+[0;32m[0m* version 1.93.2 beta Linux
+[0;32m[0m* (C) 2010-present, Jian Yang, The University of Queensland
+[0;32m[0m* Please report bugs to Jian Yang <jian.yang.qt@gmail.com>
+[0;32m[0m*******************************************************************
+[0;32mAnalysis started [0mat 16:05:30 UTC on Wed Jan 27 2021.
+[0;32m[0mHostname: aecbc1d812fb
+[0;32m[0m
+[0;32m[0mOptions: 
+[0;32m[0m 
+--bgen imputed_genotypes_chr21.bgen 
+--info 0.1 
+--sample imputed_genotypes.sample 
+--grm-sparse output/genotypes 
+--maf 0.001 
+--fastGWA-mlm 
+--pheno output/phenotypes.fastGWA_phenotype 
+--qcovar output/phenotypes.fastGWA_qcovar 
+--covar output/phenotypes.fastGWA_covar 
+--threads 1 
+--out output/cache/imputed_genotypes_chr21.phenotypes 
+[0;32m[0m
+[0;32m[0mThe program will be running on up to 1 threads.
+[0;32m[0mReading oxford sample information file from [imputed_genotypes.sample]...
+[0;32m[0m100 individuals to be included from the sample file.
+[0;32m[0mReading phenotype data from [output/phenotypes.fastGWA_phenotype]...
+[0;32m[0m100 overlapping individuals with non-missing data to be included from the phenotype file.
+100 individuals to be included. 50 males, 50 females, 0 unknown.
+[0;32m[0mLoading bgen index from [imputed_genotypes_chr21.bgen.bgi]...
+[0;33mWarning: [0mGCTA reads sample information from '--sample' inputs, but ignore the built-in sample data.
+100 samples, 50 SNPs.
+BGEN version 1.2, compressed by zlib.
+[0;32m[0m50 SNPs to be included from bgen index file.
+Total SNPs included: 50/50.
+Threshold to filter variants: MAF > 0.001000, imputation INFO score > 0.100000.
+[0;32m[0mReading quantitative covariates from [output/phenotypes.fastGWA_qcovar].
+[0;32m[0m1 covariates of 100 samples to be included.
+[0;32m[0mReading discrete covariates from [output/phenotypes.fastGWA_covar].
+[0;32m[0m1 covariates of 100 samples to be included.
+[0;32m[0m1 qcovar, 1 covar and 0 rcovar to be included.
+[0;32m[0m100 common samples in covariates to be included.
+[0;32m[0m100 overlapping individuals with non-missing data to be included from the covariate file(s).
+[0;32m[0mReading the sparse GRM file from [output/genotypes]...
+[0;32m[0mAfter matching all the files, 100 individuals to be included in the analysis.
+[0;32m[0mEstimating the genetic variance (Vg) by fastGWA-REML (grid search)...
+Iteration 1, step size: 0.299055, logL: -196.74. Vg: 9.56977, searching range: 9.27072 to 9.86883
+Iteration 2, step size: 0.0398741, logL: -196.74. Vg: 9.43022, searching range: 9.39034 to 9.47009
+Iteration 3, step size: 0.00531654, logL: -196.74. Vg: 9.43819, searching range: 9.43287 to 9.44351
+Iteration 4, step size: 0.000708872, logL: -196.74. Vg: 9.43996, searching range: 9.43925 to 9.44067
+Iteration 5, step size: 9.45163e-05, logL: -196.74. Vg: 9.44001, searching range: 9.43991 to 9.4401
+Iteration 6, step size: 1.26022e-05, logL: -196.74. Vg: 9.43997, searching range: 9.43995 to 9.43998
+Iteration 7, step size: 1.68029e-06, logL: -196.74. Vg: 9.43996, searching range: 9.43995 to 9.43996
+Iteration 8, step size: 2.24039e-07, logL: -196.74. Vg: 9.43996, searching range: 9.43996 to 9.43996
+Iteration 9, step size: 2.98718e-08, logL: -196.74. Vg: 9.43996, searching range: 9.43996 to 9.43996
+Iteration 10, step size: 3.98291e-09, logL: -196.74. Vg: 9.43996, searching range: 9.43996 to 9.43996
+Iteration 11, step size: 5.31054e-10, logL: -196.74. Vg: 9.43996, searching range: 9.43996 to 9.43996
+Iteration 12, step size: 7.08072e-11, logL: -196.74. Vg: 9.43996, searching range: 9.43996 to 9.43996
+Iteration 13, step size: 4.72049e-12, logL: -196.74. Vg: 9.43996, searching range: 9.43996 to 9.43996
+fastGWA-REML converged.
+logL: -196.74
+Sampling variance/covariance of the estimates of Vg and Ve:
+ 109157 -108475
+-108475  107805
+
+Source	Variance	SE
+Vg	9.43996	330.389
+Ve	9.25101	328.337
+Vp	18.691
+
+Heritability = 0.505054 (Pval = 0.977206)
+fastGWA-REML runtime: 0.0712542 sec.
+[0;33mWarning: [0mthe estimate of Vg is not statistically significant. This is likely because the number of closely related individuals in the sample is not large enough. 
+In this case, the program will use linear regression for association test.
+[0;32m[0m
+Performing fastGWA linear regression analysis...
+fastGWA results will be saved in text format to [output/cache/imputed_genotypes_chr21.phenotypes.fastGWA].
+  Filtering out variants with missingness rate > 0.10, customise it with --geno flag.
+  [0;32m[0m100% finished in 0.0 sec
+50 SNPs have been processed.
+Saved 24 SNPs.
+[0;32m[0m
+[0;32mAnalysis finished [0mat 16:05:31 UTC on Wed Jan 27 2021
+Overall computational time: 0.37 sec.
+output/cache/imputed_genotypes_chr21.phenotypes.fastGWA.gz log:
+output/cache/imputed_genotypes_chr22.phenotypes.fastGWA.gz stderr:
+output/cache/imputed_genotypes_chr22.phenotypes.fastGWA.gz stdout:
+[0;32m[0m*******************************************************************
+[0;32m[0m* Genome-wide Complex Trait Analysis (GCTA)
+[0;32m[0m* version 1.93.2 beta Linux
+[0;32m[0m* (C) 2010-present, Jian Yang, The University of Queensland
+[0;32m[0m* Please report bugs to Jian Yang <jian.yang.qt@gmail.com>
+[0;32m[0m*******************************************************************
+[0;32mAnalysis started [0mat 16:05:30 UTC on Wed Jan 27 2021.
+[0;32m[0mHostname: c2b87ba71bd3
+[0;32m[0m
+[0;32m[0mOptions: 
+[0;32m[0m 
+--bgen imputed_genotypes_chr22.bgen 
+--info 0.1 
+--sample imputed_genotypes.sample 
+--grm-sparse output/genotypes 
+--maf 0.001 
+--fastGWA-mlm 
+--pheno output/phenotypes.fastGWA_phenotype 
+--qcovar output/phenotypes.fastGWA_qcovar 
+--covar output/phenotypes.fastGWA_covar 
+--threads 1 
+--out output/cache/imputed_genotypes_chr22.phenotypes 
+[0;32m[0m
+[0;32m[0mThe program will be running on up to 1 threads.
+[0;32m[0mReading oxford sample information file from [imputed_genotypes.sample]...
+[0;32m[0m100 individuals to be included from the sample file.
+[0;32m[0mReading phenotype data from [output/phenotypes.fastGWA_phenotype]...
+[0;32m[0m100 overlapping individuals with non-missing data to be included from the phenotype file.
+100 individuals to be included. 50 males, 50 females, 0 unknown.
+[0;32m[0mLoading bgen index from [imputed_genotypes_chr22.bgen.bgi]...
+[0;33mWarning: [0mGCTA reads sample information from '--sample' inputs, but ignore the built-in sample data.
+100 samples, 50 SNPs.
+BGEN version 1.2, compressed by zlib.
+[0;32m[0m50 SNPs to be included from bgen index file.
+Total SNPs included: 50/50.
+Threshold to filter variants: MAF > 0.001000, imputation INFO score > 0.100000.
+[0;32m[0mReading quantitative covariates from [output/phenotypes.fastGWA_qcovar].
+[0;32m[0m1 covariates of 100 samples to be included.
+[0;32m[0mReading discrete covariates from [output/phenotypes.fastGWA_covar].
+[0;32m[0m1 covariates of 100 samples to be included.
+[0;32m[0m1 qcovar, 1 covar and 0 rcovar to be included.
+[0;32m[0m100 common samples in covariates to be included.
+[0;32m[0m100 overlapping individuals with non-missing data to be included from the covariate file(s).
+[0;32m[0mReading the sparse GRM file from [output/genotypes]...
+[0;32m[0mAfter matching all the files, 100 individuals to be included in the analysis.
+[0;32m[0mEstimating the genetic variance (Vg) by fastGWA-REML (grid search)...
+Iteration 1, step size: 0.299055, logL: -196.74. Vg: 9.56977, searching range: 9.27072 to 9.86883
+Iteration 2, step size: 0.0398741, logL: -196.74. Vg: 9.43022, searching range: 9.39034 to 9.47009
+Iteration 3, step size: 0.00531654, logL: -196.74. Vg: 9.43819, searching range: 9.43287 to 9.44351
+Iteration 4, step size: 0.000708872, logL: -196.74. Vg: 9.43996, searching range: 9.43925 to 9.44067
+Iteration 5, step size: 9.45163e-05, logL: -196.74. Vg: 9.44001, searching range: 9.43991 to 9.4401
+Iteration 6, step size: 1.26022e-05, logL: -196.74. Vg: 9.43997, searching range: 9.43995 to 9.43998
+Iteration 7, step size: 1.68029e-06, logL: -196.74. Vg: 9.43996, searching range: 9.43995 to 9.43996
+Iteration 8, step size: 2.24039e-07, logL: -196.74. Vg: 9.43996, searching range: 9.43996 to 9.43996
+Iteration 9, step size: 2.98718e-08, logL: -196.74. Vg: 9.43996, searching range: 9.43996 to 9.43996
+Iteration 10, step size: 3.98291e-09, logL: -196.74. Vg: 9.43996, searching range: 9.43996 to 9.43996
+Iteration 11, step size: 5.31054e-10, logL: -196.74. Vg: 9.43996, searching range: 9.43996 to 9.43996
+Iteration 12, step size: 7.08072e-11, logL: -196.74. Vg: 9.43996, searching range: 9.43996 to 9.43996
+Iteration 13, step size: 4.72049e-12, logL: -196.74. Vg: 9.43996, searching range: 9.43996 to 9.43996
+fastGWA-REML converged.
+logL: -196.74
+Sampling variance/covariance of the estimates of Vg and Ve:
+ 109157 -108475
+-108475  107805
+
+Source	Variance	SE
+Vg	9.43996	330.389
+Ve	9.25101	328.337
+Vp	18.691
+
+Heritability = 0.505054 (Pval = 0.977206)
+fastGWA-REML runtime: 0.0881294 sec.
+[0;33mWarning: [0mthe estimate of Vg is not statistically significant. This is likely because the number of closely related individuals in the sample is not large enough. 
+In this case, the program will use linear regression for association test.
+[0;32m[0m
+Performing fastGWA linear regression analysis...
+fastGWA results will be saved in text format to [output/cache/imputed_genotypes_chr22.phenotypes.fastGWA].
+  Filtering out variants with missingness rate > 0.10, customise it with --geno flag.
+  [0;32m[0m100% finished in 0.0 sec
+50 SNPs have been processed.
+Saved 21 SNPs.
+[0;32m[0m
+[0;32mAnalysis finished [0mat 16:05:31 UTC on Wed Jan 27 2021
+Overall computational time: 0.44 sec.
+output/cache/imputed_genotypes_chr22.phenotypes.fastGWA.gz log:

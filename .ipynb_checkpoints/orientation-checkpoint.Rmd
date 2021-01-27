@@ -92,12 +92,16 @@ head(sub_UKBB) # show part of the data
 ```{r q1}
 sub_UKBB %>%
   count('f.22001.0.0')
+
+# sub_UKBB %>%
+#   dplyr::group_by(get('f.22001.0.0')) %>%
+#   dplyr::summarise(count = dplyr::n())
 ```
 There are 77535 females and 67221 males.
  
 **Q2:** Can you tell what kind of trait it is for tinnitus? 
 A.Binary trait. B. Continuous trait. 
-It is a binary trait as there are two distinct phenotypes.
+It is a binary trait as there are two possible responses "Yes" and "No".
 
 **Q3:** Recode f.4803
 
@@ -138,7 +142,7 @@ for (i in new_column_names)
 ```
 
 What do you think has been achieved by recoding these fields?
-We are able to simplify the responses down to 0's and 1's indicating two possible phenotypes and this process can also help us filter out subjects with no responses whose records will not be used in the study. And with 0's and 1's, it would be easier to perform different analyses.
+After recoding these fields, we organize the responses to 
 
 **Q4:** Define case and control status of tinnitus for each participant in the study:
 
@@ -160,7 +164,7 @@ df_recode$cases<-apply(data_sub, 1, f)
 head(df_recode,10)
 ```
 
-How many cases and how many controls do we have for this phenotype?
+How many cases and how many controls do we have for this phenotpype?
 ```{r q4, message=FALSE}
 df_recode %>%
   count('cases')
@@ -187,10 +191,10 @@ head(df_controls, 10)
 ### Covariates
  
 **Q6:** Field 21003 contains the information of the age of participants, same as field 4803. Note that some of them have more than one age. Can you guess why?
-There are some patients who responded to the questions during multiple visits, and several years have past between two visits.
+
 
 **Q7:** For those with more than one age records, which age do you think should be used in the genetic association analysis?
-I think we should use the average of ages for each subject. For cases who did not have 'Yes' in all entries, use the average of ages when the patients responded 'Yes'.
+
 
 **Q8:** Please compute a summary of age information for controls (you can use `summary()` function in R):
 ```{r}
@@ -216,7 +220,7 @@ auto_data <- ISLR::Auto
 fit_1<-lm(mpg ~ weight, auto_data)
 summary(fit_1)
 ```
-There is a negative association between 'mpg of the car' and 'weight of the car'. Because p-value is essentially 0 which is lower than any conventional significance level, we will reject the null hypothesis that there is no association and we have significant evidence to conclude that there is a association between 'mpg of the car' and 'weight of the car'.
+There is a negative association between 'mpg of the car' and 'weight of the car'. Because p-value is essentially 0 which is lower than any conventional significance level, we will reject the null hypothesis that there is no association and we have significant evidence to conclude that there is a association.
 
 **Q10:** Please create a new variable to indicate cars having MPG greater than 23 as 1, otherwise 0, then use logistic regrssion via `glm()` function to analyze association between weight and this new variable you just created. Please comment on what you find.
 ```{r q10, message=FALSE}
@@ -224,7 +228,7 @@ auto_data$mpg2 <- factor(ifelse(auto_data$mpg > 23, 1, 0))
 fit_2 <- glm(mpg2 ~ weight, family = binomial(link = "logit"), data = auto_data)
 summary(fit_2)
 ```
-The model shows that there is a negative association between 'mpg of the car' and 'weight of the car'. Since the p-value is essentially 0, we will reject the null hypothesis and we have significant evidence to conclude that there is an association between 'mpg of the car' and 'weight of the car'.
+The model shows that there is a negative association between 'mpg of the car' and 'weight of the car'.
 
 **Q11:** Find the `Estimates` from your asociation results summary. How do you interpret the estimated effects of weight in the context of linear regression, and in the context of logistic regression? (this question might be a bit challenging if you are not familiar with regression analysis; don't sweat if you cannot find the answer for it).
 
@@ -234,4 +238,4 @@ coef(fit_2)
 ```
 For linear regression: For every one unit increase in 'weight of the car', 'mpg of the car' will decrease 0.007647 unit. The intercept will be usually interpreted as the mean 'mpg' if the 'weight' is 0 which is not meaningful since the 'weight' of a car will not be 0.
 
-For logistic regression: For every one unit increase in 'weight of the car', the log odds reduce by 0.004095368, equivalently, there will be about a decrease of 0.4% in the odds of 'mpg of the car' be greater than 23. Similarly, the intercept is not meaningful here, since the 'weight' of a car will not be 0.
+For logistic regression: 
